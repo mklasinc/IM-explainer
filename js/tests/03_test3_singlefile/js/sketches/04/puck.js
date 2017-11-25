@@ -67,21 +67,26 @@ class Puck {
         if (this.x - this.r > width) {
           console.log('condition is satisfied!');
             //ding.play();
-            computer_score++;
+            sketch_04.computer_score++;
             this.reset();
         }
 
         if (this.x + this.r < 0) {
           console.log('condition is satisfied!');
             //ding.play();
-            player_score++;
+            sketch_04.player_score++;
             this.reset();
         }
     }
 
     show() {
-        fill(255);
-        ellipse(this.x, this.y, this.r*2);
+        fill(255,10,10);
+        //rect(100,100,100,100);
+        ellipse(this.x, this.y, this.r*2,this.r*2);
+        //ellipse(56, 46, 55, 55);
+        //rect(this.x, this.y, 40,40);
+        //console.log(this.x,this.y);
+        //rect(100,200,100,100);
         //console.log(this.x);
     }
 }

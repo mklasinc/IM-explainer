@@ -32,12 +32,10 @@ var sketch_04 = {
     text(this.computer_score, 32, 40);
     text(this.player_score, width-64, 40);
 
-    if (keyIsPressed === true) {
-      if (key == 'J') {
-          player_paddle.move(-10);
-      } else if (key == 'M') {
-          player_paddle.move(10);
-      }
+    if(keyIsDown(UP_ARROW)){
+      player_paddle.move(-10);
+    }else if(keyIsDown(DOWN_ARROW)){
+      player_paddle.move(10);
     }else{
       player_paddle.move(0);
     }

@@ -1,4 +1,6 @@
 var $INSTRUCTIONS;
+var g_width;
+var g_height;
 
 var INSTRUCTIONS_ARRAY = [
   'Hello there! This is the first sketch',
@@ -36,7 +38,8 @@ function text_update(prev_counter,new_counter){
 $(document).ready(function(){
   $INSTRUCTIONS = $('.instructions_text');
   console.log('we have loaded!');
-
+  g_width = $( window ).width();
+  g_height = $( window ).height();
   //fill in text
   $INSTRUCTIONS.text(INSTRUCTIONS_ARRAY[0]);
   $INSTRUCTIONS.css('color','white');

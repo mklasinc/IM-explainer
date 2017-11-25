@@ -12,8 +12,8 @@ var g_sketch_array_counter = 0;
 function setup() {
 
   // create create
-
-	myCanvas = createCanvas(windowWidth, windowHeight);
+  //
+	myCanvas = createCanvas(g_width, g_height*0.95);
   myCanvas.parent('p5_container');
 
   // instantiate sketches
@@ -29,8 +29,8 @@ function draw() {
   // call functions
   //console.log('testing if i can access the trace variable: ', sketch_02.mouse_trace);
   //sketch_02["transition"]();
-  
-  /*if(g_sketch_array_counter === 0){
+
+  if(g_sketch_array_counter === 0){
     draw_blocks();
   }else if(g_sketch_array_counter === 1){
     sketch_02.run();
@@ -39,7 +39,7 @@ function draw() {
     sketch_02.reset();
   }else if(g_sketch_array_counter === 3){
     sketch_04.run();
-  }*/
+  }
   //console.log('we are running');
 
 }

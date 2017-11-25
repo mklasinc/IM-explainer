@@ -1,3 +1,20 @@
+
+var blocksArray = [];
+
+function instantiate_blocks(){
+  for (var i = 0; i < 10; i++){
+		var aBlock = new Blocks();
+		blocksArray.push(aBlock);
+	};
+};
+
+function draw_blocks(){
+  background(0);
+  for (var i = 0; i < blocksArray.length; i++){
+    blocksArray[i].run();
+  };
+};
+
 function Blocks(){
 	this.posX = random(0, width);
 	this.posY = random(0, height);

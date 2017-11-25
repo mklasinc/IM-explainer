@@ -1,38 +1,45 @@
-var blocksArray = [];
-var value = 0;
-var mouse_trace = false;
-var transition = true;
-//Called once when the page is ready
-function instantiate_blocks(){
-  for (var i = 0; i < 10; i++){
-		var aBlock = new Blocks();
-		blocksArray.push(aBlock);
-	};
-};
 
-function draw_blocks(){
-  background(0);
-  for (var i = 0; i < blocksArray.length; i++){
-    blocksArray[i].run();
-  };
-};
+var g_background_color = 0;
 
-var sketch_array = ["draw_blocks","change_to_black"];
-var sketch_array_counter = 0;
+var g_transition = true;
+
+//sketch array global vars
+var g_sketch_array = ["draw_blocks","sketch_02.transition","sketch_03","sketch_04"];
+var g_sketch_array_counter = 0;
+
+// setup
 
 function setup() {
+
+  // create create
 
 	myCanvas = createCanvas(windowWidth, windowHeight);
   myCanvas.parent('p5_container');
 
-  //instantiate blocks
+  // instantiate sketches
+
   instantiate_blocks();
 
 }
 
-//Called every frame after setup is called
+// draw
+
 function draw() {
-	//draw_blocks();
-  window[sketch_array[sketch_array_counter]]();
+
+  // call functions
+  //console.log('testing if i can access the trace variable: ', sketch_02.mouse_trace);
+  //sketch_02["transition"]();
+  
+  /*if(g_sketch_array_counter === 0){
+    draw_blocks();
+  }else if(g_sketch_array_counter === 1){
+    sketch_02.run();
+  }else if(g_sketch_array_counter === 2){
+    sketch_03.run();
+    sketch_02.reset();
+  }else if(g_sketch_array_counter === 3){
+    sketch_04.run();
+  }*/
+  //console.log('we are running');
 
 }

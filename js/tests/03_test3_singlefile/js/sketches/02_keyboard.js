@@ -1,17 +1,36 @@
-function change_to_black(){
+var sketch_02 = {
 
-  if(transition){
-    background(value);
-    value += 6;
-    if(value >= 255){
-      value = 255;
-      mouse_trace = true;
-      transition = false;
-    }
+  mouse_trace: false,
+  transition: false,
+
+
+
+  draw: function(){
+    console.log(this.mouse_trace);
+    //transition
+    if(!this.transition){
+      background(g_background_color);
+      g_background_color += 6;
+      if(g_background_color >= 255){
+        g_background_color = 255;
+        this.mouse_trace = true;
+        this.transition = true;
+      }
+    };
+
+    //line trace
+    if(mouseIsPressed && this.mouse_trace){
+      line(mouseX, mouseY, pmouseX, pmouseY);
+    };
+  },
+
+  run: function(){
+    this.draw();
+  },
+
+  reset: function(){
+    this.mouse_trace = false;
+    this.transition = false;
   }
 
- if (mouseIsPressed){
-   console.log('mouse is dragged!');
-    line(mouseX, mouseY, pmouseX, pmouseY);
-  }
 }

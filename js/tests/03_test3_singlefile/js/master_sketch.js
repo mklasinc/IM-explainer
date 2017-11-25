@@ -13,7 +13,7 @@ function setup() {
 
   // create create
   //
-	myCanvas = createCanvas(g_width, g_height*0.95);
+	myCanvas = createCanvas(g_width , g_height*0.95);
   myCanvas.parent('p5_container');
 
   // instantiate sketches

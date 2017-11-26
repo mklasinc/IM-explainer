@@ -33,13 +33,14 @@ class ComputerPaddle {
     move_to_puck(puck_y_pos){
       //console.log('puck_y_pos is', puck_y_pos, 'this pos is', (this.y + this.h));
       //console.log('puck_y_pos is',puck_y_pos);
-      if(puck_y_pos > this.y && puck_y_pos < (this.y + this.h)){
+      /*if(puck_y_pos > this.y && puck_y_pos < (this.y + this.h)){
         this.move(0);
-      }else if(puck_y_pos < this.y){
-        this.move(-10);
+      }else */
+      if(puck_y_pos < this.y){
+        this.move(-5);
       }else if(puck_y_pos > (this.y + this.h)){
 
-        this.move(10);
+        this.move(5);
       }
     }
 

@@ -22,6 +22,7 @@ function draw() {
     sketch_01.run();
   }else if(g_sketch_array_counter === 1){
     sketch_02.run();
+		sketch_01.reset();
   }else if(g_sketch_array_counter === 2){
     sketch_03.run();
   }

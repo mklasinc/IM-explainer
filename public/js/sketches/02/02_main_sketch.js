@@ -28,14 +28,19 @@ var sketch_02 = {
 
 
     fill(255);
+    textSize(50);
+    textAlign(CENTER);
+    text("YOU", width-300, 60);
+    text("COMPUTER", 300, 60);
     textSize(32);
+    text(this.computer_score, 32, 40);
     text(this.computer_score, 32, 40);
     text(this.player_score, width-64, 40);
 
     if (keyIsPressed === true) {
-      if (key == 'J') {
+      if (keyCode == UP_ARROW) {
           player_paddle.move(-10);
-      } else if (key == 'M') {
+      } else if (keyCode == DOWN_ARROW) {
           player_paddle.move(10);
       }
     }else{

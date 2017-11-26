@@ -1,7 +1,7 @@
 var sketch_03 = {
 
   song_array: [],
-  active_key: 0,
+  active_key: "",
   show_keys: false,
 
   run_setup: true,

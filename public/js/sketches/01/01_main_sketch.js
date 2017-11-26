@@ -14,7 +14,7 @@ var sketch_01 = {
   setup: function(){
       //do setup
       smooth();
-
+      background(255);
       // init form
       this.centerX = width/2;
       this.centerY = height/2;
@@ -76,5 +76,8 @@ var sketch_01 = {
   run: function(){
     if(this.run_setup){this.setup()};
     this.draw();
+  },
+  reset: function(){
+    this.run_setup = true;
   }
 }

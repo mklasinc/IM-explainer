@@ -13,7 +13,7 @@ function counter_update(){
   console.log('update sketch!');
   var old_counter = g_sketch_array_counter;
   g_sketch_array_counter++;
-  if(g_sketch_array_counter == g_sketch_array.length){
+  if(g_sketch_array_counter == g_num_of_sketches){
     g_sketch_array_counter = 0;
   }
   var new_counter = g_sketch_array_counter;

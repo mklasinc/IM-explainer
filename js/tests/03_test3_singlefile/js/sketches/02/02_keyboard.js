@@ -6,7 +6,6 @@ var sketch_02 = {
 
 
   draw: function(){
-    console.log(this.mouse_trace);
     //transition
     if(!this.transition){
       background(g_background_color);

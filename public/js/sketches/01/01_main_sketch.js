@@ -1,4 +1,4 @@
-var sketch_05 = {
+var sketch_01 = {
   formResolution: 15,
   stepSize: 2,
   distortionFactor: 1,

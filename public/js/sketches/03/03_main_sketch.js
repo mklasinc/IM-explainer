@@ -1,4 +1,4 @@
-var sketch_06 = {
+var sketch_03 = {
 
   song_array: [],
   active_key: 0,
@@ -7,9 +7,9 @@ var sketch_06 = {
   run_setup: true,
   setup: function(){
     for(var i = 0; i < 10; i++){
-      this.song_array[i] = loadSound("assets/sound" + (i+1) + ".wav");
+      this.song_array[i] = loadSound("js/sketches/assets/sound" + (i+1) + ".wav");
     };
-    textSize(250);
+    textSize(500);
     this.run_setup = false;
   },
 
@@ -19,7 +19,9 @@ var sketch_06 = {
     fill(245, 123, 158);
 
     if(this.show_keys){
-      textAlign(CENTER);
+      noStroke();
+      textSize(500);
+      textAlign(CENTER,CENTER);
       text(this.active_key, width/2,height/2)
     };
   },

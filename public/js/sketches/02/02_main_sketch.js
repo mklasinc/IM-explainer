@@ -1,7 +1,13 @@
 var sketch_02 = {
+
+  // sketch variables
+
+  run_setup: true, // setup boolean
   computer_score: 0,
   player_score: 0,
-  run_setup: true,
+
+  // setup function, called once
+
   setup: function(){
       puck = new Puck();
       computer_paddle = new ComputerPaddle(true);
@@ -9,6 +15,8 @@ var sketch_02 = {
       puck.reset();
       this.run_setup = false;
   },
+
+  // draw function
 
   draw: function(){
     background(0);
@@ -47,6 +55,9 @@ var sketch_02 = {
       player_paddle.move(0);
     }
   },
+
+  // run function, called from the master sketch
+
   run: function(){
     if(this.run_setup){this.setup()};
     this.draw();

@@ -1,12 +1,8 @@
-var $INSTRUCTIONS;
-var g_width;
-var g_height;
+var instructions_array;
+var $instructions;
+var g_width; // used in the master p5 sketch
+var g_height; // used in the master p5 sketch
 
-var INSTRUCTIONS_ARRAY = [
-  'Hello there! Move around with your mouse and see what happens!',
-  'Want to challenge a computer at pong? Go ahead! (Move your paddle up and down with arrow keys)',
-  'You\'re doing great! Now press any number key on your keyboard!'
-];
 
 function counter_update(up){
   //console.log('update sketch!');
@@ -23,48 +19,51 @@ function counter_update(up){
     }
   }
   var new_counter = g_sketch_array_counter;
-  text_update(old_counter,new_counter);
+  instructions_update(old_counter,new_counter);
 }
 
-function text_update(prev_counter,new_counter){
-  console.log('prev counter is',prev_counter,'new counter is', new_counter);
+function instructions_setup(){
 
-  //fade out old
-  $INSTRUCTIONS.hide();
-  setTimeout(function(){
-    new_counter === 1 ? $INSTRUCTIONS.css({"color":"white","background-color":"black"}) : $INSTRUCTIONS.css({"color":"black","background-color":"none"});
-    $INSTRUCTIONS.text(INSTRUCTIONS_ARRAY[new_counter]).fadeIn();
+  $.get("js/assets/instructions/instructions.txt",function(data){
+    console.log(data);
+    instructions_array = data.trim().split('\n');
+    $instructions = $('.instructions_text');
+    $instructions.text(instructions_array[0]);
     setTimeout(function(){
-      $INSTRUCTIONS.fadeOut();
+      $instructions.fadeOut();
+    },3000);
+  });
+
+}
+
+function instructions_update(prev_counter,new_counter){
+
+  //hide old instructions
+  $instructions.hide();
+  // fade in new instructions
+  setTimeout(function(){
+    new_counter === 1 ? $instructions.css({"color":"white","background-color":"black"}) : $instructions.css({"color":"black","background-color":"none"});
+    $instructions.text(instructions_array[new_counter]).fadeIn();
+    setTimeout(function(){
+      $instructions.fadeOut();
     },3000);
   },1000);
 
-
-
-  // fade in new
 };
 
+// document on load
 
 $(document).ready(function(){
-  $INSTRUCTIONS = $('.instructions_text');
+
   console.log('we have loaded!');
   g_width = $( window ).width();
   g_height = $( window ).height();
-  //fill in text
-  $INSTRUCTIONS.text(INSTRUCTIONS_ARRAY[0]);
-  //setTimeout(function(){ $('.instructions_text').text(INSTRUCTIONS_ARRAY[1]);}, 3000);
+
+  instructions_setup();
 
   $('.update_button').click(function(e){
-    //console.log('forward button is pressed!');
-    console.log(e.target.id);
     var move_on = e.target.id === "forward_button" ? true : false;
     counter_update(move_on);
-    //text_update();
   });
 
 });
-
-/*<iframe src="./myPage.aspx" id="myIframe" scrolling="no" frameborder="0"
-    style="position: relative; height: 100%; width: 100%;">
-...
-</iframe>*/

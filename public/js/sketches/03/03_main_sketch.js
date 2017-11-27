@@ -1,17 +1,22 @@
 var sketch_03 = {
 
+  // sketch variables
+  run_setup: true, // setup boolean
   song_array: [],
   active_key: "",
   show_keys: false,
 
-  run_setup: true,
+  // setup function, called once
+
   setup: function(){
     for(var i = 0; i < 10; i++){
-      this.song_array[i] = loadSound("js/sketches/assets/sound" + (i+1) + ".wav");
+      this.song_array[i] = loadSound("js/assets/sketch_03_sound/sound" + (i+1) + ".wav");
     };
     textSize(500);
     this.run_setup = false;
   },
+
+  // draw function
 
   draw: function(){
     background(255);
@@ -26,6 +31,8 @@ var sketch_03 = {
     };
   },
 
+  // key press functionality
+
   key_press: function(){
     this.show_keys = true;
     var ascii_adj_index = keyCode - 48;
@@ -33,8 +40,9 @@ var sketch_03 = {
       this.active_key = ascii_adj_index;
       this.song_array[ascii_adj_index].play();
     }
-
   },
+
+  // run function, called from the master sketch
 
   run: function(){
     if(this.run_setup){

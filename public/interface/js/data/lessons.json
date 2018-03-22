@@ -1,0 +1,24 @@
+{"all_chapters":
+  [
+    {
+      "chapter_title":"On Interaction",
+      "chapter_number":"01",
+      "chapter_description":"We find ourselves in the Screen, the land of pixels.I know this place inside out - I know where the borders of the screen are,I know how big I am and where on the screen I am -I sense your presence too, or the position of your mouse, rather."
+    },
+    {
+      "chapter_title":"Mouse and Keys",
+      "chapter_number":"02",
+      "chapter_description":"Remember, you’re part of my world now, so the things I can do, you can do too!For instance, let’s make a rectangle together. "
+    },
+    {
+      "chapter_title":"Sound Output",
+      "chapter_number":"03",
+      "chapter_description":"So far we’ve been interacting with and through pixels, but interactive media amounts to so much more! Sound is also an important aspect of my world. Press any of the number keys and see what happens!"
+    },
+    {
+      "chapter_title":"Sound Input",
+      "chapter_number":"04",
+      "chapter_description":"Sound doesn’t only have to be an output. If you allow me to listen to the input from your microphone, try blowing into the microphone to move particles around the screen!"
+    }
+  ]
+}

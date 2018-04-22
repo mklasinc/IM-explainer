@@ -74,6 +74,19 @@ function count_images(el){
   // return img_array;
 };
 
+function change_img_sources(el,character){
+  var img_array = $(el).find('img');
+  console.log(img_array[0]);
+  for(var i = 0; i < img_array.length;i++){
+    console.log($(img_array[i]).attr('src'));
+    var img_index = i + 1;
+    var new_src = 'img/lessons/01/' + character + '-chat-0' + img_index + '.png';
+    console.log(new_src);
+    $(img_array[i]).attr('src',new_src);
+  }
+
+};
+
 
 /*----------- WINDOW ONLOAD ---------*/
 
@@ -83,7 +96,8 @@ $(document).ready(function(){
   g_chapters = load_json($CHAPTER_FILEPATH);
 
   //
-  count_images('.lesson__article');
+  // count_images('.lesson__article');
+  change_img_sources('.lesson__article','wiz');
 
   // set up click handlers for arrow keys
 

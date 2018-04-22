@@ -4,9 +4,12 @@ var g_num_of_sketches = 3; //number of sketches
 var g_sketch_array_counter = 0; // counter used to loop through the sketches
 var g_background_color = 0;
 var g_transition = true;
+
+// canvas variables
 var canvas_width = $('#canvas-container').width();
 var canvas_height = $('#canvas-container').height();
 var draw_on_canvas = false;
+
 
 // setup
 
@@ -20,28 +23,30 @@ function setup() {
 // draw
 
 function draw() {
-	// console.log("hey");
 	if(draw_on_canvas){
-		draw_active_sketch();
+		// draw_active_sketch();
+		// sketch_04.run();
+		sketch_02.run();
 	}
 
 }
 
 function draw_active_sketch(){
 
-	if(g_sketch_array_counter === 0){
-    sketch_01.run();
-  }else if(g_sketch_array_counter === 1){
+	if(g_chapter_counter === 1){
     sketch_02.run();
 		sketch_01.reset();
-  }else if(g_sketch_array_counter === 2){
+  }else if(g_chapter_counter === 2){
+		sketch_01.reset();
     sketch_03.run();
+
+  }else if(g_chapter_counter === 3){
+    sketch_01.run();
   }
 
 }
 
 function set_draw_status(status_bool){
-	console.log("draw on canvas is updated!");
 	draw_on_canvas = status_bool;
 }
 

@@ -14,6 +14,13 @@ var sketch_01 = {
   filled: false,
   freeze: false,
 
+  //run function, called from the master sketch
+
+  run: function(){
+    if(this.run_setup){this.setup()};
+    this.draw();
+  },
+
   // setup function
 
   setup: function(){
@@ -33,6 +40,7 @@ var sketch_01 = {
   //draw function
 
   draw: function(){
+    background(255);
     if (mouseX != 0 || mouseY != 0) {
       this.centerX += (mouseX-this.centerX) * 0.01;
       this.centerY += (mouseY-this.centerY) * 0.01;
@@ -65,12 +73,7 @@ var sketch_01 = {
     //this.check_mouse_press();
   },
 
-  //run function, called from the master sketch
 
-  run: function(){
-    if(this.run_setup){this.setup()};
-    this.draw();
-  },
 
   // reset function, called when the sketch is not active
 

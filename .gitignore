@@ -2,3 +2,4 @@ node_modules/
 obsolete/
 .DS_Store*
 scss/
+sandbox/

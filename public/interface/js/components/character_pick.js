@@ -2,7 +2,7 @@ const $character_one = $('.character--one'),
       $character_two = $('.character--two'),
       $character_three = $('.character--three'),
       $characters = $('.character'),
-    tl = new TimelineLite();
+      tl = new TimelineLite();
 
 var characters_obj = [
   {
@@ -22,63 +22,55 @@ var characters_obj = [
 const character_css_properties = [
   {
     height: "150px",
-    width: "100px",
+    width: "120px",
     opacity:0.5,
     // backgroundColor: "rgba(0,0,0,0.7)",
     zIndex: 1,
     top: "48%",
-    left: "25%"
+    left: "20%"
   },
+  // main
   {
-    height: "240px",
-    width: "160px",
+    height: "250px",
+    width: "200px",
     // backgroundColor: "rgba(0,0,0,1)",
     opacity:1,
     zIndex: 2,
     top: "50%",
-    left: "50%"
+    left: "50%",
+    onCompleteParams: ['.character.active',1,0.1],
+    onComplete: animate_character_speech_bubble
 
   },
   {
     height: "150px",
-    width: "100px",
+    width: "120px",
     // backgroundColor: "rgba(0,0,0,0.7)",
     opacity:0.5,
     zIndex: 1,
     top: "48%",
-    left: "75%"
+    left: "80%"
   }
 ];
 
-// @mixin character-pick-inactive{
-//     height: $character-base-height*0.7;
-//     width: $character-base-width*0.7;
-//     background-color: $character-base-color;
-//     top: 50% - $character-inactive-yoffset;
-//     z-index: 1;
-// }
-//
-// @mixin character-pick-active{
-//   background-color:  $character-active-color;
-//   z-index: 2;
-// }
-
-
-function animate_character_test(direction_bool){
-  // console.log("called!");
-  // if(direction_bool){
-  //   // TweenLite.to($character_one,1,character_css_properties[]);
-  // }else{
-  //   TweenLite.to($character_one,1,{className:"-=character--main"});
-  // }
-
-};
+function animate_character_speech_bubble(el,new_opacity,new_delay = 0){
+  console.log("called!");
+  let $speech_bubble = $(el).find('.speech-bubble');
+  TweenLite.to($speech_bubble,0.1,{opacity:new_opacity,delay:new_delay});
+}
 
 function animate_character_positions(obj){
-  var anim_duration = 0.3;
-  obj.forEach(function(d){
+  let anim_duration = 0.3;
+  animate_character_speech_bubble('.character',0,0);
+  obj.forEach(function(d,i){
     console.log("animate!", d.index);
+    $(d.el).removeClass('active');
+    $(d.el).addClass('inactive');
     TweenLite.to(d.el,anim_duration,character_css_properties[d.index]);
+    if(d.index == 1){
+      $(d.el).removeClass('inactive');
+      $(d.el).addClass('active');
+    }
   });
 }
 
@@ -115,32 +107,43 @@ $(document).ready(function(){
     if($(e.target).hasClass('carousel-nav__arrow--character-pick-left')){
       // console.log("left!");
       rotate_characters('left');
-      // g_chapter_counter--;
-      // chapter_update(g_chapter_counter);
+
     }else if($(e.target).hasClass('carousel-nav__arrow--character-pick-right')){
       // console.log("right!");
       rotate_characters('right');
-      // g_chapter_counter++;
-      // chapter_update(g_chapter_counter);
     };
-    // if the canvas is active make it inactive
-    // var canvas_is_active = get_draw_status;
-    // console.log(canvas_is_active);
-    // if(get_draw_status() === true){
-    //   console.log("deactive the canvas!");
-    //   make_canvas_active(false);
+
+  });
+
+  // character click handlers
+
+  $('.character').click(function(e){
+    // if the character you click on is currently active you have picked it as your guide
+
+    if($(e.target).parent().hasClass('active')){
+        // find the chosen character and its corresponding speech bubble
+        let $guide = $(e.target).parent();
+        let $speech_bubble = $guide.find('.speech-bubble');
+        console.log("you've picked your guide!");
+        // update the character's speech bubble attribute
+        $speech_bubble.attr('data-chat',"Yes! You picked the right one!");
+        // fade out the other two characters
+        TweenLite.to($('.character.inactive'),0.5,{opacity:0});
+        // fade out the arrows
+        TweenLite.to($('.carousel-nav--character-pick'),0.3, {opacity:0});
+        //fade out the title
+        TweenLite.to($('.title-container'),0.3, {opacity:0});
+        // make the current character bigger;
+        TweenLite.to($guide, 0.5, {scale:1.2});
+        // show the guide's speech bubble
+        TweenLite.to($speech_bubble, 0.5, {opacity:1});
+    }
+    // if(){
+    //   console.log("you picked your guide!");
     // }
 
   });
-  //
-  // // click handler for the experience button
-  //
-  // $(".lesson__article__button").click(function(e){
-  //   // save the index of the currently active lesson, used to active the corresponding p5 sketch
-  //   var article_index = $(e.target).data("index");
-  //   // console.log("clicked!");
-  //   // make canvas active
-  //   make_canvas_active(true);
-  // });
+
+
 
 });

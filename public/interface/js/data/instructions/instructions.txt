@@ -1,3 +1,0 @@
-Hello there! Move around with your mouse and see what happens!
-Want to challenge a computer at pong? Go ahead! (Move your paddle up and down with arrow keys)
-You're doing great! Now press any number key on your keyboard!

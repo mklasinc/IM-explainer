@@ -2,9 +2,8 @@
 <html>
 	<head>
 		<meta charset="utf-8"/>
-		<!-- <meta name="viewport" content="width=device-width"> -->
+		<meta name="viewport" content="width=device-width">
 		<title>HTML Boilerplate</title>
-		<!-- <link rel="stylesheet" type="text/css" href="style.css" /> -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/main.css" />
@@ -26,27 +25,52 @@
       </aside>
       <article class="lesson__article">
         <h1 class="lesson__article__title">On Interaction</h1>
-        <p class="lesson__article__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id sapien id augue convallis pretium. Sed ut sodales quam. Nulla pretium lobortis ipsum. Cras efficitur in velit sed vulputate. Ut eget eros a mi pulvinar convallis eget quis urna. Donec justo erat, pellentesque vitae nisl sit amet, facilisis feugiat nisl. Sed porta nunc quis lectus varius, et convallis purus scelerisque. Vivamus rutrum, eros eu sodales aliquet, ipsum turpis dapibus risus, quis condimentum felis arcu ac velit. Nulla facilisi. Suspendisse potenti. Nam vitae nulla sed urna pharetra lobortis. Etiam pharetra quis ipsum eu euismod. Phasellus hendrerit dignissim augue sit amet molestie.</p>
-        </p>
-        <button class="lesson__article__button">Try out the experience</button>
+        <div class="lesson__article__description">
+					<span>An interaction is often likened to a conversation - the two interacting agents have to: </span><br />
+						<span><strong>a)</strong> listen to each other, </span><br />
+						<div class="lesson__article__image-container">
+							<!-- <img class="lesson__article__image" src="img/lessons/01/ix-05.png"/> -->
+							<img class="lesson__article__image" src="img/lessons/02/01.png"/>
+						</div>
+						<span><strong>b)</strong>understand what the other agent is saying, and </span><br />
+						<div class="lesson__article__image-container">
+							<!-- <img class="lesson__article__image" src="img/lessons/01/ix-03.png"/> -->
+							<img class="lesson__article__image" src="img/lessons/02/02.png"/>
+						</div>
+							<span><strong>c)</strong> respond to each other in a meaningful way. </span></br>
+							<div class="lesson__article__image-container">
+								<!-- <img class="lesson__article__image" src="img/lessons/01/ix-02.png"/> -->
+								<img class="lesson__article__image" src="img/lessons/02/03.png"/>
+							</div>
+							<span>Complex interactions take place throughout the natural world, but recently, the advancements in digital technologies enabled machines to interact with humans, as well as with other machines, in ever more complicated ways.</span><br />
+							<div class="lesson__article__image-container">
+								<!-- <img class="lesson__article__image" src="img/lessons/01/ix-04.png"/> -->
+								<img class="lesson__article__image" src="img/lessons/02/04.png"/>
+							</div>
+							<!-- <iframe src="landing_page.html" sandbox>
+								<p>Your browser does not support iframes.</p>
+							</iframe><br/> -->
+							<span>The Interactive Media program at NYU Abu Dhabi leverages the potential of technology to explore and examine the ways we create, communicate, and participate in the world.</span>
+				</div>
+        <button class="lesson__article__button">Try out a simple interactive experience</button>
       </article>
     </section>
 
     <aside class="carousel-nav">
-      <img class="carousel-nav__arrow carousel-nav__arrow--left" src="icons/down-arrow.png"/>
+      <img class="carousel-nav__arrow carousel-nav__arrow--left hidden" src="icons/down-arrow.png"/>
       <img class="carousel-nav__arrow carousel-nav__arrow--right" src="icons/down-arrow.png"/>
     </aside>
 
-    <div id="canvas-container" class="canvas">
-    </div>
+    <div id="canvas-container" class="canvas"></div>
 
-
-
+		<!-- jquery -->
 		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-
+		<!-- p5  -->
 		<script src="js/vendor/p5.js"></script>
 		<script src="js/vendor/p5.dom.js"></script>
 		<script src="js/vendor/p5.sound.js"></script>
+		<!-- p5 sketches -->
+		<script src="js/sketches/Walker/Walker.js"></script>
 		<script src="js/sketches/01/01_main_sketch.js"></script>
 		<script src="js/sketches/02/02_main_sketch.js"></script>
 		<script src="js/sketches/02/puck.js"></script>
@@ -54,7 +78,8 @@
 		<script src="js/sketches/02/computer_paddle.js"></script>
 		<script src="js/sketches/03/03_main_sketch.js"></script>
 		<script src="js/sketches/master_sketch.js"></script>
-
+		<!-- js files -->
+		<script type="text/javascript" src="js/components/ChapterButton.js"></script>
     <script type="text/javascript" src="js/components/Chapter.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>

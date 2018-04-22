@@ -34,7 +34,10 @@ function load_json(filepath){
 
 function chapter_update(index){
   console.log(index);
+  // update lesson description
   Chapter(g_chapters[index],index);
+  // update lesson button text
+  ChapterButton(g_chapters[index]);
   // when we reach first or last chapter, respectively, hide corresponding arrows
   if(index === g_chapters.length - 1){
     // hide right arrow
@@ -61,7 +64,15 @@ function make_canvas_active(display_bool){
     set_draw_status(false);
 
   }
-}
+};
+
+function count_images(el){
+  var img_array = $(el).find('img');
+  console.log(img_array);
+  // var img_num = im.length;
+  console.log("the number of images is",img_array.length);
+  // return img_array;
+};
 
 
 /*----------- WINDOW ONLOAD ---------*/
@@ -70,6 +81,9 @@ $(document).ready(function(){
 
   // load chapter data
   g_chapters = load_json($CHAPTER_FILEPATH);
+
+  //
+  count_images('.lesson__article');
 
   // set up click handlers for arrow keys
 
@@ -83,10 +97,8 @@ $(document).ready(function(){
       chapter_update(g_chapter_counter);
     };
     // if the canvas is active make it inactive
-    // var canvas_is_active = get_draw_status;
-    // console.log(canvas_is_active);
     if(get_draw_status() === true){
-      console.log("deactive the canvas!");
+      console.log("deactivate the canvas!");
       make_canvas_active(false);
     }
 
@@ -97,7 +109,6 @@ $(document).ready(function(){
   $(".lesson__article__button").click(function(e){
     // save the index of the currently active lesson, used to active the corresponding p5 sketch
     var article_index = $(e.target).data("index");
-    // console.log("clicked!");
     // make canvas active
     make_canvas_active(true);
   })

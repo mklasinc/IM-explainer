@@ -124,6 +124,15 @@ button {
   left: 50vw;
   transform: translate(-50%, -50%); }
 
+iframe {
+  overflow: hidden;
+  border: none; }
+
+.sketch-1 {
+  width: 100%;
+  overflow: hidden;
+  min-height: 400px; }
+
 .character {
   position: absolute;
   transform: translate(-50%, -50%); }

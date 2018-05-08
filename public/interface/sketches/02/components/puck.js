@@ -67,14 +67,14 @@ class Puck {
         if (this.x - this.r > width) {
           console.log('condition is satisfied!');
             //ding.play();
-            sketch_02.computer_score++;
+            computer_score++;
             this.reset();
         }
 
         if (this.x + this.r < 0) {
           console.log('condition is satisfied!');
             //ding.play();
-            sketch_02.player_score++;
+            player_score++;
             this.reset();
         }
     }

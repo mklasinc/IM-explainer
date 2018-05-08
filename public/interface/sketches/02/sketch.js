@@ -1,24 +1,24 @@
-var sketch_02 = {
+// sketch variables
 
-  // sketch variables
-
-  run_setup: true, // setup boolean
-  computer_score: 0,
-  player_score: 0,
+  var run_setup = true, // setup boolean
+      computer_score = 0,
+      player_score = 0,
+      myCanvas;
 
   // setup function, called once
 
-  setup: function(){
+  function setup(){
+      myCanvas = createCanvas(540,300);
+      myCanvas.parent('canvas-container');
       puck = new Puck();
       computer_paddle = new ComputerPaddle(true);
       player_paddle = new Paddle(false);
       puck.reset();
-      this.run_setup = false;
-  },
+  };
 
   // draw function
 
-  draw: function(){
+  function draw(){
     background(0);
 
     puck.checkPaddleRight(player_paddle);
@@ -35,15 +35,15 @@ var sketch_02 = {
     puck.show();
 
 
-    fill(255);
-    textSize(50);
-    textAlign(CENTER);
-    text("YOU", width-300, 60);
-    text("COMPUTER", 300, 60);
-    textSize(32);
-    text(this.computer_score, 32, 40);
-    text(this.computer_score, 32, 40);
-    text(this.player_score, width-64, 40);
+    // fill(255);
+    // textSize(50);
+    // textAlign(CENTER);
+    // text("YOU", width-300, 60);
+    // text("COMPUTER", 300, 60);
+    // textSize(32);
+    // text(computer_score, 32, 40);
+    // text(computer_score, 32, 40);
+    // text(player_score, width-64, 40);
 
     if (keyIsPressed === true) {
       if (keyCode == UP_ARROW) {
@@ -54,13 +54,4 @@ var sketch_02 = {
     }else{
       player_paddle.move(0);
     }
-  },
-
-  // run function, called from the master sketch
-
-  run: function(){
-    if(this.run_setup){this.setup()};
-    this.draw();
-  }
-
-}
+  };

@@ -1,0 +1,32 @@
+/* FONTS */
+@font-face {
+  font-family: 'apercu_bold';
+  src: url("styles/fonts/webfonts/apercu_bold-webfont.woff2") format("woff2"), url("styles/fonts/webfonts/apercu_bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'simplon-mono_bold';
+  src: url("styles/fonts/webfonts/simplon-mono-bold-webfont.woff2") format("woff2"), url("styles/fonts/webfonts/simplon-mono-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'simplon-mono_regular';
+  src: url("styles/fonts/webfonts/simplon-mono-regular-webfont.woff2") format("woff2"), url("styles/fonts/webfonts/simplon-mono-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+body {
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 2;
+  color: black;
+}

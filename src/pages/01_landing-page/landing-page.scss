@@ -1,0 +1,60 @@
+.title-container--landing-page {
+  position: fixed;
+  left: 50%;
+  top: 30vh;
+  transform: translateX(-50%);
+}
+
+.title {
+  text-align: center;
+  margin: 0;
+
+  &--main {
+    font-family: "apercu_bold", sans-serif;
+    font-size: 2rem;
+  }
+
+  &--sub {
+    font-family: "simplon-mono_regular", sans-serif;
+    transform: translateY(-1rem);
+  }
+}
+
+.button--landing-page {
+  margin-top: 1rem;
+  position: absolute;
+  min-width: 170px;
+  left: 50%;
+  color: black;
+  border: none;
+  background-color: white;
+  transform: translateX(-50%);
+  font-family: "simplon-mono_regular", sans-serif;
+}
+
+.test-gif {
+  position: absolute;
+  height: 100px;
+}
+
+.canvas {
+  position: fixed;
+  top: 2em;
+  height: calc(100vh - 25px);
+  width: 100vw;
+  background: red;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 100;
+}
+
+.canvas--landing-page {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.canvas--active {
+  opacity: 1;
+  visibility: visible;
+}

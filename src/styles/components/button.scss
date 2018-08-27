@@ -1,0 +1,13 @@
+button,
+.btn {
+  border: 1px black solid;
+  border-radius: 5px;
+  background-color: black;
+  padding: 10px 20px 10px 20px;
+  color: white;
+  font-family: 'Source Code Pro';
+  text-transform: uppercase;
+  &:hover {
+    cursor: pointer;
+  }
+}

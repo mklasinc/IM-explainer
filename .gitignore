@@ -3,3 +3,5 @@ obsolete/
 .DS_Store*
 scss/
 sandbox/
+package-lock.json
+.gitattributes

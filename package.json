@@ -4,8 +4,8 @@
   "description": "Explainer page for the Interactive Media department at NYU Abu Dhabi",
   "main": "server.js",
   "scripts": {
-    "build-css": "node-sass --include-path scss scss/main.scss public/interface/css/main.css",
-    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+    "dev": "webpack-dev-server --config build/webpack.config.dev.js",
+    "build": "webpack --mode production --config build/webpack.config.dev.js"
   },
   "repository": {
     "type": "git",
@@ -18,9 +18,29 @@
   },
   "homepage": "https://github.com/mklasinc/IM-explainer#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "jquery": "^3.3.1"
   },
   "devDependencies": {
-    "node-sass": "^4.7.2"
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "barba.js": "^1.0.0",
+    "copy-webpack-plugin": "^4.5.2",
+    "css-loader": "^1.0.0",
+    "file-loader": "^1.1.11",
+    "gsap": "^2.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.1",
+    "node-sass": "^4.9.3",
+    "pug": "^2.0.3",
+    "pug-cli": "^1.0.0-alpha6",
+    "pug-html-loader": "^1.1.5",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.22.1",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5"
   }
 }

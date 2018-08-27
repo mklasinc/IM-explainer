@@ -1,0 +1,43 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none
+}
+
+html,
+body {
+  height: 100%;
+  // overflow: hidden;
+}
+
+
+img {
+  max-width: 100%;
+}
+
+a:active,
+a:focus,
+a:visited {
+  outline: none;
+  text-decoration: none;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+iframe {
+  overflow: hidden;
+  border: none;
+}

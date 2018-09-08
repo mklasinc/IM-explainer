@@ -1,8 +1,0 @@
-node_modules/
-obsolete/
-.DS_Store*
-scss/
-sandbox/
-package-lock.json
-.gitattributes
-.gitignore

@@ -6,6 +6,9 @@ IM Explainer Page is an experience aimed at spelling out the vision of the [Inte
 * [webpack](https://webpack.js.org/)
 * [Sass](https://sass-lang.com/)
 
+### Usage
+For development, install the dependencies and run `npm run dev` from your command line. For production, run `npm run build`. 
+
 ### Folder Structure
     .
     ├── build/                      # Webpack config
@@ -26,6 +29,5 @@ IM Explainer Page is an experience aimed at spelling out the vision of the [Inte
     ├── package.json
     ├── main.scss
     └── README.md
-    
-    ### Usage
-    For development, run `npm run dev` from your command line. For production, run `npm run build`. 
+
+

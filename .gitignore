@@ -5,3 +5,4 @@ scss/
 sandbox/
 package-lock.json
 .gitattributes
+.gitignore

@@ -26,8 +26,20 @@ export default function (){
           })
         }
     });
-    Barba.Pjax.getTransition = function() {
 
+    Barba.Dispatcher.on('linkClicked', function(el, e) {
+        // ShowOverlay(e.clientX, e.clientY);
+        e.stopPropagation();
+        e.preventDefault();
+        console.log("link was clicked!");
+    });
+    Barba.Pjax.getTransition = function() {
+      // document.addEventListener('click',function(e){
+      //   const $clicked_el = $(e.target);
+      //   if ($clicked_el.hasClass('trigger-transition')){
+      //     console.log("trigger the transition!");
+      //   }
+      // });
       return transEffect;
     }
     Barba.Pjax.start();

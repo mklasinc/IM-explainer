@@ -1,7 +1,7 @@
 import BaseStyles from '../../main.scss';
 import CharacterPickStyles from './character-pick.scss';
 import CharacterPick from './character_pick.js';
-import barbaSetup from '../../js/barba-script-1.js';
+import barbaSetup from '../../js/barba-script-2.js';
 // import Barba from 'barba.js';
 import 'jquery';
 

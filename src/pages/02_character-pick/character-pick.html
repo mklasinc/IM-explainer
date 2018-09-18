@@ -11,7 +11,7 @@
 	</head>
 	<body>
 		<div id="barba-wrapper">
-			<div class="barba-container">
+			<div class="barba-container" data-namespace="character">
 				<aside class="title-container" >
 					<h1 class="character-pick-title character-pick-title--main">Welcome to the world of Interactive Media!</h1>
 					<h3 class="character-pick-title character-pick-title--sub">Pick your tour guide</h3>
@@ -19,19 +19,23 @@
 				<main class="character-space">
 					<div class="character character--one character--side-left inactive" data-character-name="Grace">
 						<!-- <img src="img/characters/average_scaled.png"  /> -->
-						<img class="trigger-transition" src="static/img/characters/grace.png"  />
+						<a href="article.html" class="tourGuide" data-tourguide="grace">
+							<img class="trigger-transition" src="static/img/characters/grace.png"  />
+						</a>
 						<div class="speech-bubble speech-bubble--grace" data-chat="I'm just average, but you can still pick me!" data-color="cyan"></div>
 					</div>
 						<div class="character character--two character--main active" data-character-name="Tech Wizard">
 							<!-- <img src="img/characters/wizard_scaled.png"  /> -->
-							<a href="article.html">
+							<a href="article.html" class="tourGuide" data-tourguide="wiz">
 								<img class="trigger-transition" src="static/img/characters/wiz.png"  />
 							</a>
 							<div class="speech-bubble speech-bubble--wiz" data-chat="I'm the wizard!" data-color='#00FF8F'></div>
 						</div>
 					<div class="character character--three character--side-right inactive" data-character-name="Kat">
 						<!-- <img src="img/characters/cat_scaled.png"  /> -->
-						<img class="trigger-transition" src="static/img/characters/kat.png"  />
+						<a href="article.html" class="tourGuide" data-tourguide="kat">
+							<img class="trigger-transition" src="static/img/characters/kat.png"  />
+						</a>
 						<div class="speech-bubble speech-bubble--kat" data-chat="Choosing a cat is always a good move!" data-color="yellow"></div>
 					</div>
 

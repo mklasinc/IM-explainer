@@ -9,9 +9,10 @@ const webpack = require('webpack');
 module.exports = {
   mode: 'development',
   entry: {
-    landingPage: './src/index.js',
-    character: './src/pages/02_character-pick/index.js',
-    main: './src/pages/03_article/index.js'
+    // landingPage: './src/index.js',
+    // character: './src/pages/02_character-pick/index.js',
+    // main: './src/pages/03_article/index.js'
+    main: './src/index.js'
   },
   devServer: {
     compress: true,
@@ -31,24 +32,26 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: 'index.html',
+      // chunks: ['landingPage'],
       inject: true
     }),
     // character pick
     new HtmlWebpackPlugin({
       filename: 'character-pick.html',
       template: './src/pages/02_character-pick/character-pick.html',
-      chunks: ['character']
+      // chunks: ['character'],
+      // inject: true
     }),
     // Main experience
     new HtmlWebpackPlugin({
       filename: 'article.html',
       template: './src/pages/03_article/article.html',
-      chunks: ['main']
+      // chunks: ['main']
     }),
     new MiniCssExtractPlugin({
-      // filename: "app.css",
+      filename: "app.css",
       // chunkFilename: "main.css"
-      chunkFilename: "[id].css"
+      // chunkFilename: "[id].css"
     }),
     new CopyWebpackPlugin([
       {

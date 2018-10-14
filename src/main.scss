@@ -1,10 +1,5 @@
-// @import 'styles/typography.scss';
-//
-// @import 'styles/layout.scss';
-
 // base
 @import 'styles/base/reset.scss';
-
 @import 'styles/base/variables.scss';
 
 // abstracts
@@ -14,11 +9,11 @@
 // layout
 @import 'styles/layout/typography.scss';
 
-// previous
-// @import 'styles/main1.scss';
-
 // components
 @import 'styles/components/button.scss';
-// @import 'pages/01_landing-page/landing-page.scss';
-// @import 'pages/02_character-pick/character-pick.scss';
-// @import 'pages/03_article/article.scss';
+
+// pages
+// --> page specific styles have to be included in the main.scss file because barba does not update styles links (=all pages reference this file)
+@import 'pages/01_landing-page/styles/landing-page.scss';
+@import 'pages/02_character-pick/styles/character-pick.scss';
+@import 'pages/03_article/styles/article.scss';

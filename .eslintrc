@@ -1,0 +1,137 @@
+{
+    "extends" : [],
+    "plugins" : [
+    ],
+  "parserOptions" : {
+    "ecmaVersion": 2017,
+    "sourceType" : "module"
+  },
+  "env": {
+    "browser": true,
+    "node"    : true,
+    "commonjs": true,
+    "es6": true,
+    "jest": true
+  },
+  "globals": {
+  },
+  "rules": {
+    "no-multi-spaces" : 0,
+    "prefer-const": "error",
+    "camelcase" : 0,
+    "no-console" : 0,
+    "no-debugger": 2,
+    "strict": 0,
+    "semi": ["error", "always"],
+    "linebreak-style": 0,
+    "no-bitwise": 0,
+    "no-cond-assign": 0,
+    "curly": [
+      2,
+      "all"
+    ],
+    "eqeqeq": 2,
+    "no-eq-null": 2,
+    "no-eval": 0,
+    "no-unused-expressions": 2,
+    "guard-for-in": 2,
+    "wrap-iife": 2,
+    "no-use-before-define": 0,
+    "no-loop-func": 0,
+    "no-caller": 2,
+    "no-script-url": 2,
+    "no-shadow": 0,
+    "no-new-func": 0,
+    "no-new-wrappers": 0,
+    "no-undef": 2,
+    "new-cap": 0,
+    "no-empty": [
+      2,
+      {
+        "allowEmptyCatch": true
+      }
+    ],
+    "no-new": 2,
+    "no-plusplus": 0,
+    "dot-notation": 2,
+    "indent": [
+      2,
+      4,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "keyword-spacing": [
+      2,
+      {}
+    ],
+    "space-before-blocks": [
+      2,
+      "always"
+    ],
+    "space-before-function-paren": [
+      2,
+      "always"
+    ],
+    "array-bracket-spacing":["error", "never"],
+    "space-in-parens": [
+      2,
+      "never"
+    ],
+    "key-spacing": ["error", {
+        "multiLine": {
+          "beforeColon": true,
+          "afterColon": true
+        },
+        "align": {
+            "beforeColon": true,
+            "afterColon": true,
+            "on": "colon"
+        }
+    }],
+
+    "comma-spacing": ["error", { "before": false, "after": true }],
+    "comma-style": [
+      2,
+      "last"
+    ],
+    "operator-linebreak": [
+      2,
+      "after"
+    ],
+    "space-unary-ops": [
+      2,
+      {
+        "nonwords": true,
+        "overrides": {
+          "++": false,
+          "--": false,
+          "+": false,
+          "-": false,
+          "~": false,
+          "!": false
+        }
+      }
+    ],
+    "space-infix-ops": 2,
+    "no-with": 2,
+    "no-multi-str": 2,
+    "no-mixed-spaces-and-tabs": 2,
+    "comma-dangle": [
+      2,
+      "never"
+    ],
+    "brace-style": [
+      2,
+      "1tbs",
+      {
+        "allowSingleLine": true
+      }
+    ],
+    "yoda": [
+      2,
+      "never"
+    ],
+    "quotes": 0
+  }
+}
